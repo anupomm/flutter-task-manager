@@ -8,3 +8,8 @@
   <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/5ef7f055-60b7-4b47-b26c-0e9bcdbb0a45" width="300" /> 
 </p>
 
+<p float="left">
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/695f21de-6f1a-45ea-9869-e9fc07271371" width="300" />
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/8eae1957-ee1b-4269-b6af-7123b2ec7d11" width="300" /> 
+</p>
+
