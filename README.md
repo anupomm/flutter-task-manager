@@ -1,16 +1,6 @@
-# task_manager
 
-A new Flutter project.
+<p float="left">
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/8b0522a6-f457-4780-a282-f374e2ab32be" width="100" />
+  <img src="[/path/to/image2.png](https://github.com/anupomm/flutter-task-manager/assets/95094496/3c0003b7-5e3f-4a42-8089-2c51b5e0220f)https://github.com/anupomm/flutter-task-manager/assets/95094496/3c0003b7-5e3f-4a42-8089-2c51b5e0220f" width="100" /> 
+</p>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
