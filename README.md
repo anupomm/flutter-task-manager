@@ -19,6 +19,6 @@
 </p>
 
 <p float="left">
-  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/93ff4e6e-3d87-4b2c-9314-8f75b60b3152" width="300" />
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/254a0243-6f13-4055-b835-de902d2d9603" width="300" />
   <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/72fd1942-7bfe-4549-9c6f-bd531898a540" width="300" /> 
 </p>
