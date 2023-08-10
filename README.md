@@ -18,4 +18,7 @@
   <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/576764cd-dcf5-4002-89be-4517f9671f83" width="300" /> 
 </p>
 
-
+<p float="left">
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/93ff4e6e-3d87-4b2c-9314-8f75b60b3152" width="300" />
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/72fd1942-7bfe-4549-9c6f-bd531898a540" width="300" /> 
+</p>
