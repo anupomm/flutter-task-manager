@@ -56,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BottomNavBaseScreen()),
+                                  builder: (context) => const BottomNavBaseScreen()),
                               (route) => false);
                         },
                         child: const Icon(Icons.arrow_forward_ios_outlined),
