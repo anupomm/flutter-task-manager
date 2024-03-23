@@ -25,6 +25,7 @@ class NetworkCaller {
       Response response = await post(Uri.parse(url),
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode(body));
+
       if (response.statusCode == 200) {
         return NetworkResponse(
             true, response.statusCode, jsonDecode(response.body));

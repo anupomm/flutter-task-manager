@@ -80,7 +80,7 @@ class EmailVerificationScreen extends StatelessWidget {
                             Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const LoginScreen()),
+                                    builder: (context) =>  LoginScreen()),
                                 (route) => false);
                           },
                           child: const Text(

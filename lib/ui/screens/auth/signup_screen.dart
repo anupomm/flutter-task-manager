@@ -201,7 +201,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const LoginScreen()),
+                                    builder: (context) =>  LoginScreen()),
                                 (route) => false,
                               );
                             },
