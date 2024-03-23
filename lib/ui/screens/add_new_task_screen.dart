@@ -24,7 +24,7 @@ class AddNewTaskScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       color: Colors.black,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   const SizedBox(height: 16),
