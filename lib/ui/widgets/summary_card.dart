@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SummaryCard extends StatelessWidget {
+  final int number;
+  final String title;
+
   const SummaryCard({
     Key? key, // Added Key? type
     required this.number,
     required this.title, // Added required keyword
   }) : super(key: key);
-
-  final int number;
-  final String title;
 
   @override
   Widget build(BuildContext context) {
