@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/data/models/auth_utility.dart';
+import 'package:task_manager/data/models/login_model.dart';
 import 'package:task_manager/data/models/response_object.dart';
 import 'package:task_manager/data/services/network_caller.dart';
 import 'package:task_manager/ui/screens/auth/signup_screen.dart';
@@ -39,6 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     if (response.isSuccess) {
+      LoginModel model = LoginModel.fromJson(response.body!);
+      await AuthUtility.saveUserInfo(model);
       if (mounted) {
         Navigator.pushAndRemoveUntil(
             context,
