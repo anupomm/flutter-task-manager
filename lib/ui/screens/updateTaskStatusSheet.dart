@@ -5,7 +5,6 @@ import '../../data/models/task_list_model.dart';
 import '../../data/services/network_caller.dart';
 import '../../data/utils/urls.dart';
 
-
 class UpdateTaskStatusSheet extends StatefulWidget {
   final TaskData task;
   final VoidCallback onUpdate;
@@ -35,7 +34,7 @@ class _UpdateTaskStatusSheetState extends State<UpdateTaskStatusSheet> {
       setState(() {});
     }
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.updateTask(taskId, newStatus));
+        await NetworkCaller().getRequest(Urls.updateTask(taskId, newStatus));
     updateTaskInProgress = false;
     if (mounted) {
       setState(() {});
@@ -60,22 +59,28 @@ class _UpdateTaskStatusSheetState extends State<UpdateTaskStatusSheet> {
       child: Column(
         children: [
           const Padding(
-              padding: EdgeInsets.all(16), child: Text('Update Status', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),)),
+              padding: EdgeInsets.all(16),
+              child: Text(
+                'Update Status',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              )),
           Expanded(
-            child: ListView.builder(
-                itemCount: taskStatusList.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    onTap: () {
-                      _selectedTask = taskStatusList[index];
-                      setState(() {});
-                    },
-                    title: Text(taskStatusList[index].toUpperCase()),
-                    trailing: _selectedTask == taskStatusList[index]
-                        ? const Icon(Icons.check)
-                        : null,
-                  );
-                }),
+            child: ListView.separated(
+              itemCount: taskStatusList.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  onTap: () {
+                    _selectedTask = taskStatusList[index];
+                    setState(() {});
+                  },
+                  title: Text(taskStatusList[index].toUpperCase()),
+                  trailing: _selectedTask == taskStatusList[index]
+                      ? const Icon(Icons.check)
+                      : null,
+                );
+              },
+              separatorBuilder: (context, index) => const Divider(height: 2),
+            ),
           ),
           Padding(
               padding: const EdgeInsets.all(16),
@@ -88,7 +93,9 @@ class _UpdateTaskStatusSheetState extends State<UpdateTaskStatusSheet> {
                       onPressed: () {
                         updateTask(widget.task.sId!, _selectedTask);
                       },
-                      style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(24)),
+                      style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 16)),
                       child: const Text('Update'))))
         ],
       ),

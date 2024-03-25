@@ -36,6 +36,9 @@ class _CancelledTaskScreenState extends State<CancelledTaskScreen> {
     }
     NetworkResponse response =
     await NetworkCaller().getRequest(Urls.cancelledListTasks);
+    print('Cancelled');
+    print(response.statusCode);
+    print(response.body);
 
     if (response.isSuccess) {
       _cancelledTaskListModel = TaskListModel.fromJson(response.body!);

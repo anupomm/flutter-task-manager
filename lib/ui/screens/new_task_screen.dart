@@ -39,7 +39,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
       setState(() {});
     }
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.taskStatusCount);
+        await NetworkCaller().getRequest(Urls.taskStatusCount);
     if (response.isSuccess) {
       _summaryCountModel = SummaryCountModel.fromJson(response.body!);
     } else {
@@ -60,7 +60,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
       setState(() {});
     }
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.newListTasks);
+        await NetworkCaller().getRequest(Urls.newListTasks);
     if (response.isSuccess) {
       _taskListModel = TaskListModel.fromJson(response.body!);
     } else {
@@ -77,7 +77,7 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
 
   Future<void> deleteTask(String taskId) async {
     final NetworkResponse response =
-    await NetworkCaller().getRequest(Urls.deleteTask(taskId));
+        await NetworkCaller().getRequest(Urls.deleteTask(taskId));
     if (response.isSuccess) {
       _taskListModel.data!.removeWhere((element) => element.sId == taskId);
       if (mounted) {
@@ -94,33 +94,33 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
+      body: SafeArea(
+        child: Column(children: [
           const UserProfileBanner(),
           _getCountSummaryInProgress
               ? const LinearProgressIndicator()
               : Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: 80,
-              width: double.infinity,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemCount: _summaryCountModel.data?.length ?? 0,
-                itemBuilder: (context, index) {
-                  return SummaryCard(
-                    title: _summaryCountModel.data![index].sId ?? 'New',
-                    number: _summaryCountModel.data![index].sum ?? 0,
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const Divider(
-                    height: 4,
-                  );
-                },
-              ),
-            ),
-          ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 80,
+                    width: double.infinity,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: _summaryCountModel.data?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        return SummaryCard(
+                          title: _summaryCountModel.data![index].sId ?? 'New',
+                          number: _summaryCountModel.data![index].sum ?? 0,
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const Divider(
+                          height: 4,
+                        );
+                      },
+                    ),
+                  ),
+                ),
           Expanded(
             child: RefreshIndicator(
               onRefresh: () async {
@@ -129,31 +129,32 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               },
               child: _getNewTaskInProgress
                   ? const Center(
-                child: CircularProgressIndicator(),
-              )
+                      child: CircularProgressIndicator(),
+                    )
                   : ListView.separated(
-                itemCount: _taskListModel.data?.length ?? 0,
-                itemBuilder: (context, index) {
-                  return TaskListTile(
-                    data: _taskListModel.data![index],
-                    onDeleteTap: () {
-                      deleteTask(_taskListModel.data![index].sId!);
-                    },
-                    onEditTap: () {
-                      // showEditBottomSheet(_taskListModel.data![index]);
-                      showStatusUpdateBottomSheet(_taskListModel.data![index]);
-                    },
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return const Divider(
-                    height: 4,
-                  );
-                },
-              ),
+                      itemCount: _taskListModel.data?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        return TaskListTile(
+                          data: _taskListModel.data![index],
+                          onDeleteTap: () {
+                            deleteTask(_taskListModel.data![index].sId!);
+                          },
+                          onEditTap: () {
+                            // showEditBottomSheet(_taskListModel.data![index]);
+                            showStatusUpdateBottomSheet(
+                                _taskListModel.data![index]);
+                          },
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const Divider(
+                          height: 4,
+                        );
+                      },
+                    ),
             ),
           ),
-        ],
+        ]),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
@@ -187,9 +188,11 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
       isScrollControlled: true,
       context: context,
       builder: (context) {
-        return UpdateTaskStatusSheet(task: task, onUpdate: () {
-          getNewTasks();
-        });
+        return UpdateTaskStatusSheet(
+            task: task,
+            onUpdate: () {
+              getNewTasks();
+            });
       },
     );
   }
