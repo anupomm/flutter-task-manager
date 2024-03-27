@@ -6,10 +6,10 @@
   <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/7398801a-f1a2-4563-b272-439ca615ee93" width="300" />
   <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/b4a52df6-479b-4378-9d57-139d25596f8f" width="300" /> 
     <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/cfb30b43-bfe5-462e-a02a-8c52f57fbdeb" width="300" />
+  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/2b73f4df-339c-4d00-ab0b-1faf89996c03" width="300" /> 
 </p>
 <p float="left">
-  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/cfb30b43-bfe5-462e-a02a-8c52f57fbdeb" width="300" />
-  <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/2b73f4df-339c-4d00-ab0b-1faf89996c03" width="300" /> 
+  
 </p>
 <p float="left">
   <img src="https://github.com/anupomm/flutter-task-manager/assets/95094496/ced2fead-78ea-44c2-820f-ae525ce2d7f0" width="300" />
